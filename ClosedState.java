@@ -1,25 +1,29 @@
 public class ClosedState implements AccountState{
     //You can neither suspend nor activate it.
     //No deposits and withdrawals allowed.
-
-    /*public void switchState(Account account){
-      account.setState(new ActiveState());
-    }
-    
-    public activate(){
-        return "You cannot activate a closed account!";
+    @Override
+    public void deposit(Account account, Double depositAmount) {
+        System.out.println("\nYou cannot deposit on a closed account! " + account.toString());
     }
 
-    public suspend(){
-        return "You cannot suspend a closed account!";
+    @Override
+    public void withdraw(Account account, Double withdrawAmount) {
+        System.out.println("\nYou cannot withdraw on a closed account! " + account.toString());
     }
 
-    public deposit(Double depositAmount){
-        return "You cannot deposit on a closed account!";
+    @Override
+    public void close(Account account){
+       System.out.println("\nAccount is already closed!");
     }
 
-    public withdraw(Double withdrawAmount){
-        return "You cannot withdraw on a closed account!";
+    @Override
+    public void activate(Account account){
+        System.out.println("\nYou cannot activate a closed account!");
+    }
 
-    } */
+    @Override
+    public void suspend(Account account){
+        System.out.println("\nYou cannot suspend a closed account!");
+    }
+
 }
